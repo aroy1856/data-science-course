@@ -1,52 +1,44 @@
-Here's the extracted text:
+# GenAI Assignment 12 - Seaborn
 
-**Task 1: Relational Plot**
-1. Create a relational plot (relplot) using:
-   - X-axis → numerical column
-   - Y-axis → numerical column
-2. Use hue with a categorical column.
-3. Create the same plot using scatter style.
+Same sales CSV as assignment 11, but this time using seaborn for prettier plots — relational, distribution, categorical, regression, and a few figure-level ones at the end.
 
-**Task 2: Line Plot as Scatter & Facet**
-1. Create a line plot using sns.lineplot().
-2. Convert the same relationship into a scatter-style plot.
-3. Use faceting (col or row) to split the plot based on a categorical column.
+## How to run
 
-**Task 3: Distribution Plots**
-For a numerical column:
-1. Plot Histogram using Seaborn.
-2. Plot KDE plot.
-3. Plot Rug plot.
-4. Combine Histogram + KDE in a single plot.
+Open `seaborn.ipynb` and run cells from the top. Keep `sales_data.csv` in the same folder.
 
-**Task 4: Bivariate Distribution Plots**
-Using two numerical columns:
-1. Create a bivariate histogram.
-2. Create a bivariate KDE plot.
+Needs `seaborn`, `matplotlib`, and `pandas`.
 
-**Task 5: Matrix Plots**
-1. Create a pair plot using sns.pairplot().
-2. Create a heatmap of correlation matrix.
+## What's inside
 
-**Task 6: Categorical Plots**
-Using a categorical and numerical column:
-1. Bar plot
-2. Box plot
-3. Violin plot
-4. Count plot
+**Data**  
+Loaded `sales_data.csv` and converted `Sale_Date` to datetime.
 
-**Task 7: Regression Plots**
-1. Create a regression plot (regplot) between two numerical columns.
-2. Create an lmplot with hue using a categorical column.
+**Task 1 - Relational plot**  
+`relplot` with `Unit_Price` vs `Discount`, colored by `Product_Category`. Did it as line and scatter.
 
----
+**Task 2 - Line, scatter & facet**  
+`lineplot` and `scatterplot` for discount vs sales, then split by category using `col='Product_Category'`.
 
-**Task 8: Multi-Plots & Figure-Level Plots**
-1. Create a FacetGrid with:
-   - One numerical variable on x-axis
-   - One numerical variable on y-axis
-   - Categorical column as col or row
-2. Create a multi-plot dashboard using:
-   - relplot
-   - catplot
-   - displot
+**Task 3 - Distribution**  
+Histogram, KDE, rug plot on `Discount`, then hist + KDE together.
+
+**Task 4 - Bivariate distribution**  
+2D hist and KDE for `Discount` vs `Quantity_Sold`.
+
+**Task 5 - Matrix plots**  
+`pairplot` on the full dataframe and a correlation heatmap for numeric columns.
+
+**Task 6 - Categorical**  
+Bar, box, violin, and count plots using `Product_Category` with sales/discount.
+
+**Task 7 - Regression**  
+`regplot` for unit price vs quantity, then `lmplot` with hue by category.
+
+**Task 8 - Multi-plots**  
+Manual `FacetGrid` with scatter by category, then a small dashboard with `relplot`, `catplot`, and `displot`.
+
+## Files
+
+- `seaborn.ipynb` — all the plots
+- `sales_data.csv` — the dataset
+- `README.md` — this file
